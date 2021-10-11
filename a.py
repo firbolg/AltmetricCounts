@@ -16,20 +16,10 @@ tweeters_total = 0
 for file in os.listdir():
     file_path = f"{path}\{file}"
     with open(file_path, "r") as f:
-       # fi = f.read()
+ 
         data = json.loads(f.read())
         
-        #if "cohorts" in data["users"]["twitter"]:
-           # print("cohorts: ",data["users"]["twitter"]["cohorts"])
-          #  if "Members of the public" in data["twitter"]["cohorts"]:
-               # print("public: ",data["demographics"]["poster_types"]["Members of the public"])
-        #else: 
-          #  continue
-        #if "cohorts" in data["twitter"]:
-           # if "Scientists" in data["twitter"]["cohorts"]:
-              #  print("scientists: ",data["twitter"]["cohorts"]["Scientists"])
-        #else:
-           # continue
+ 
         if "posts_count" in data["counts"]["twitter"]:
             #print("tweets: ",data["counts"]["twitter"]["posts_count"])
             tweets = data["counts"]["twitter"]["posts_count"]
@@ -48,9 +38,7 @@ for file in os.listdir():
                 continue
         else:
             continue
-    #sci = data["demographics"]["poster_types"]["researcher"]
-    #print(pub)
-    #return pub
+  
 
 
 print(tweets_total, tweeters_total)
@@ -60,12 +48,6 @@ for d in geo_list:
     geo_result.update(d)
 print(len(geo_result))
 
-#df = pd.DataFrame.from_dict(geo_result, orient='index').reset_index()
-#df.rename(columns={0:"size"})
-#print(df.head())
-
-#fig = px.scatter_geo(df, locations='index', color="continent",
-                     #size=['index',0],projection="natural earth")
 
 df = pd.read_csv(r"C:\Users\Levi\source\repos\AltmetricCounts\altmetric_country_coords_colorTEST.csv")
 
