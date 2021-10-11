@@ -21,17 +21,16 @@ for file in os.listdir():
         
  
         if "posts_count" in data["counts"]["twitter"]:
-            #print("tweets: ",data["counts"]["twitter"]["posts_count"])
+      
             tweets = data["counts"]["twitter"]["posts_count"]
             tweets_total = tweets_total + tweets
         if "unique_users_count" in data["counts"]["twitter"]:
-            #print("tweeters: ",data["counts"]["twitter"]["unique_users_count"])
+
             tweeters = data["counts"]["twitter"]["unique_users_count"]
             tweeters_total = tweeters_total + tweeters
         if "geo" in data["demographics"]:
             if "twitter" in data["demographics"]["geo"]:
-        #returns dict
-            #print("location: ",data["demographics"]["geo"]["twitter"])
+
                 geo = data["demographics"]["geo"]["twitter"]
                 geo_list.append(geo)  
             else:
